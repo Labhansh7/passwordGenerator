@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>gererate password</title>
+    <link rel="stylesheet" href="main.css" />
+    <link
+      rel="shortcut icon"
+      href="./favicon_io/android-chrome-512x512.png"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <div
+      class="flex flex-col justify-center items-center bg-gradient-to-b from-[--dk-voilet] to-[--lt-voilet] w-[100vw] h-[100vh]"
+    >
+      <h1 class="text-white font-bold mb-3 text-2xl">PASSWORD GENERATOR</h1>
+      <div
+        class="bg-[--dk-voilet] p-5 rounded-lg w-80 flex justify-between text-[--vb-yellow] border-b-4 border-purple-500"
+      >
+        <input
+          readonly
+          placeholder="PASSWORD"
+          class="data-passwordDisplay bg-[--dk-voilet] font-bold placeholder-[--vb-yellow]"
+        />
+
+        <button id="data-copy">
+          <span class="data-copyMsg"></span>
+          <i class="fa-solid fa-copy text-blue-300"></i>
+        </button>
+      </div>
+
+      <!-- input container  -->
+      <div
+        class="bg-[--dk-voilet] p-6 rounded-lg text-white font-bold pt-3 mt-6 w-80 space-y-4"
+      >
+        <div>
+          <div class="flex justify-between">
+            <p>Password Length</p>
+            <p id="data-lengthNumber" class="text-[--vb-yellow]">0</p>
+          </div>
+        </div>
+        <!-- slider  -->
+        <input
+          id="Myrange"
+          type="range"
+          min="1"
+          max="20"
+          class="slider "
+          step="1"
+        />
+        <!-- check boxes  -->
+        <div class="check">
+          <input
+            type="checkbox"
+            id="uppercase"
+            class="appearance-none size-5 border-2 border-[--vb-cyan] cursor-pointer relative rounded-md checked:bg-[--vb-cyan]"
+          />
+          <label for="uppercase">includes Uppercase Letters.</label>
+        </div>
+        <div class="check">
+          <input
+            type="checkbox"
+            id="lowercase"
+            class="appearance-none size-5 border-2 border-[--vb-cyan] cursor-pointer relative rounded-md checked:bg-[--vb-cyan]"
+          />
+          <label for="Lowercase">includes Lowercase Letters.</label>
+        </div>
+        <div class="check">
+          <input
+            type="checkbox"
+            id="numbers"
+            class="appearance-none size-5 border-2 border-[--vb-cyan] cursor-pointer relative rounded-md checked:bg-[--vb-cyan]"
+          />
+          <label for="numbers">includes Numbers.</label>
+        </div>
+        <div class="check">
+          <input
+            type="checkbox"
+            id="symbols"
+            class="appearance-none size-5 border-2 border-[--vb-cyan] cursor-pointer relative rounded-md checked:bg-[--vb-cyan]"
+          />
+          <label for="symbols">includes symbols.</label>
+        </div>
+
+        <!-- strength section  -->
+        <div class="flex items-center justify-between">
+          <p>Strength</p>
+          <div
+            class="size-4 bg-gray-500 rounded-[50%]"
+            id="data-indicator"
+          ></div>
+        </div>
+
+        <!-- button  -->
+        <button
+          id="generatebutton"
+          class="w-full bg-purple-600 px-2 py-3 rounded-lg text-[--vb-yellow] border-b-4 border-[--vb-yellow]"
+        >
+          GENERATE PASSWORD
+        </button>
+      </div>
+    </div>
+
+    <script
+      src="https://kit.fontawesome.com/1a138dad04.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>
